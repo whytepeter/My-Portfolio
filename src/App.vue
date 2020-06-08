@@ -1,32 +1,46 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="background relative w-screen h-screen bg-fixed">
+    <div class="background index fixed top-0 left-0 bottom-0 right-0"></div>
+    <div class="container height mx-auto px-0 md:px-4 py-6 font-lato">
+      <app-navbar class="z-30" />
+      <transition
+        :duration="400"
+        enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut"
+        mode="out-in"
+      >
+        <router-view />
+      </transition>
     </div>
-    <router-view/>
   </div>
 </template>
+<script>
+import { mapGetters } from "vuex";
+import Navbar from "./components/Navbar";
+export default {
+  components: {
+    appNavbar: Navbar
+  },
+  computed: {
+    ...mapGetters({ isActive: "getActive" })
+  }
+};
+</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+.background {
+  background-image: linear-gradient(to left, #fcfcfcea, #fcfcfcea),
+    url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-#nav {
-  padding: 30px;
+.index {
+  z-index: -1;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.height {
+  height: 93%;
 }
 </style>
+
