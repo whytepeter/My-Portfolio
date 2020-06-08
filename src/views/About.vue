@@ -12,7 +12,7 @@
           <img
             src="../assets/about-whyte.png"
             alt="whyte peter"
-            class="object-cover object-top w-full h-full"
+            class="object-cover object-top w-full rounded-t-lg h-full"
           />
         </div>
         <div
