@@ -47,7 +47,7 @@
         />
       </div>
     </div>
-    <div class="Social absolute z-20 h-full top-0 right-0 pb-20 flex">
+    <div class="Social absolute z-20 h-full top-0 right-0 py-4 flex">
       <div
         class="Social h-90 flex flex-col justify-around items-end px-1 pb-20 md:py-4 my-3 text-xl"
       >

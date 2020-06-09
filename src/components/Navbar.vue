@@ -69,12 +69,12 @@
           class="transition duration-300 inline-block p-4 whitespace-no-wrap hover:text-textHover focus:text-accent"
         >About</a>
       </router-link>
-      <router-link tag="li" to="/portfolio" class="list-none">
+      <router-link tag="li" to="/projects" class="list-none">
         <a
-          @click="goto('portfolio')"
-          :class="[isActive === 'portfolio' ? 'text-accent ' : 'text-gray-800']"
+          @click="goto('projects')"
+          :class="[isActive === 'projects' ? 'text-accent ' : 'text-gray-800']"
           class="transition duration-300 inline-block p-4 whitespace-no-wrap hover:text-textHover focus:text-accent"
-        >Portfolio</a>
+        >Projects</a>
       </router-link>
       <router-link tag="li" to="/contact" class="list-none">
         <a
@@ -97,28 +97,28 @@
         <div>
           <router-link tag="li" to="/" class="list-none px-4 w-full text-left">
             <a
-              @click="mobile = false, goto('home')"
+              @click=";(mobile = false), goto('home')"
               :class="[isActive === 'home' ? 'text-accent' : 'text-text1']"
               class="transition duration-300 inline-block py-3 px-6 whitespace-no-wrap hover:text-textHover"
             >Home</a>
           </router-link>
           <router-link tag="li" to="/about" class="list-none px-4 w-full text-left">
             <a
-              @click="mobile = false, goto('about')"
+              @click=";(mobile = false), goto('about')"
               :class="[isActive === 'about' ? 'text-accent' : 'text-text1']"
               class="transition duration-300 inline-block py-3 px-6 whitespace-no-wrap hover:text-textHover"
             >About</a>
           </router-link>
-          <router-link tag="li" to="/portfolio" class="list-none px-4 w-full text-left">
+          <router-link tag="li" to="/projects" class="list-none px-4 w-full text-left">
             <a
-              @click="mobile = false, goto('portfolio')"
-              :class="[isActive === 'portfolio' ? 'text-accent' : 'text-text1']"
+              @click=";(mobile = false), goto('projects')"
+              :class="[isActive === 'projects' ? 'text-accent' : 'text-text1']"
               class="transition duration-300 inline-block py-3 px-6 whitespace-no-wrap hover:text-textHover"
-            >Portfolio</a>
+            >Projects</a>
           </router-link>
           <router-link tag="li" to="/contact" class="list-none px-4 w-full text-left">
             <a
-              @click="mobile = false, goto('shootme')"
+              @click=";(mobile = false), goto('shootme')"
               :class="[isActive === 'shootme' ? 'text-accent' : 'text-text1']"
               class="transition duration-300 inline-block py-3 px-6 whitespace-no-wrap hover:text-textHover"
             >Shoot Me</a>
