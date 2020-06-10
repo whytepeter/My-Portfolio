@@ -194,17 +194,7 @@ export default {
     },
     onSubmit() {
       if (this.validate("email") && this.validate("message")) {
-        this.Email.send({
-          Host: "smtp.yourisp.com",
-
-          To: "whytewebonline@gmail.com",
-          From: this.email,
-          Subject: "From WhyteWeb",
-          Body: this.message
-        }).then(message => {
-          alert(message);
-          this.setAlert();
-        });
+        this.setAlert();
 
         //clear fields
         this.resetForm();
