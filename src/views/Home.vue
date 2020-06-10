@@ -47,14 +47,12 @@
         />
       </div>
     </div>
-    <div class="Social absolute z-20 h-full top-0 right-0 py-4 flex">
-      <div
-        class="Social h-90 flex flex-col justify-around items-end px-1 pb-20 md:py-4 my-3 text-xl"
-      >
+    <div class="Social absolute z-20 top-0 right-0 py-4 flex">
+      <div class="Social h-auto flex flex-col justify-between items-end px-1 md:py-4 my-3 text-xl">
         <a
           href="https://github.com/whytepeter"
           target="_blank"
-          class="transition duration-300 flex items-center py-3 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
+          class="transition duration-300 flex items-center py-6 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
         >
           <i class="fab fa-github"></i>
         </a>
@@ -62,28 +60,28 @@
         <a
           href="https://web.facebook.com/whytecode1/"
           target="_blank"
-          class="transition duration-300 flex items-center py-3 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
+          class="transition duration-300 flex items-center py-6 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
         >
           <i class="fab fa-facebook"></i>
         </a>
         <a
           href="https://twitter.com/whytecode"
           target="_blank"
-          class="transition duration-300 flex items-center py-3 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
+          class="transition duration-300 flex items-center py-6 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
         >
           <i class="fab fa-twitter"></i>
         </a>
         <a
           href="https://www.instagram.com/dewhytepeter/"
           target="_blank"
-          class="transition duration-300 flex items-center py-3 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
+          class="transition duration-300 flex items-center py-6 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
         >
           <i class="fab fa-instagram"></i>
         </a>
         <a
           href="https://wa.me/2348108139758/"
           target="_blank"
-          class="transition duration-300 flex items-center py-4 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
+          class="transition duration-300 flex items-center py-6 px-6 whitespace-no-wrap hover:text-accent focus:text-accent"
         >
           <i class="fab fa-whatsapp"></i>
         </a>

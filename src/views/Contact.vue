@@ -105,6 +105,7 @@
             class="transition duration-300 transform font-medium"
           >Email Address</label>
           <input
+            @input="validate('email')"
             @focusin="isEmail = true"
             @focusout="email == '' ? isEmail = false : isEmail = true"
             v-model="email"
@@ -125,6 +126,7 @@
           >Message</label>
 
           <textarea
+            @input="validate('message')"
             @focusin="isMessage = true"
             @focusout="message == '' ? isMessage = false : isMessage = true"
             Message
@@ -182,21 +184,27 @@ export default {
       this.isMessage = false;
     },
 
+    setAlert() {
+      this.alert = "Message send successful";
+      this.isAlert = true;
+
+      setTimeout(() => {
+        this.isAlert = false;
+      }, 5000);
+    },
     onSubmit() {
       if (this.validate("email") && this.validate("message")) {
-        this.alert = "Message send successful";
-        this.isAlert = true;
+        this.Email.send({
+          Host: "smtp.yourisp.com",
 
-        setTimeout(() => {
-          this.isAlert = false;
-        }, 5000);
-
-        //log form inputs
-        let user = {
-          email: this.email,
-          message: this.message
-        };
-        console.log(user);
+          To: "whytewebonline@gmail.com",
+          From: this.email,
+          Subject: "From WhyteWeb",
+          Body: this.message
+        }).then(message => {
+          alert(message);
+          this.setAlert();
+        });
 
         //clear fields
         this.resetForm();
