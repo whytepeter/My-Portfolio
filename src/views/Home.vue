@@ -13,7 +13,7 @@
         >
           I AM A
           <span
-            :class="skillAnim"
+            :class="work.skillAnim"
             class="text-accent ml-3 text-lg sm:text-sm md:text-xl font-semibold tracking-widest uppercase"
           >{{iAm}}</span>
         </div>
@@ -89,24 +89,20 @@
     </div>
     <div class="Portfolio absolute flex bg-secondary h-32 w-full lg:w-9/12 bottom-0 left-0">
       <div class="Project w-40 h-full bg-white">
-        <img
-          src="../assets/Portfolio/esele.png"
-          alt="esele web app"
-          class="object-cover h-full w-full"
-        />
+        <img :src="getImg(project.img)" :alt="project.name" class="object-cover h-full w-full" />
       </div>
-      <div class="Project-Info h-full flex flex-col justify-between w-auto text-text1 p-4">
-        <div class="name uppercase">{{projects.name}}</div>
+      <div class="Project-Info h-full flex flex-col justify-between w-auto text-text1 px-4 py-3">
+        <div class="name uppercase">{{project.name}}</div>
         <div class="link w-full flex items-center">
           <a
-            :href="projects.github"
+            :href="project.github"
             target="_blank"
             class="transition duration-300 bg-light py-1 px-2 rounded text-secondary hover:bg-text1 active:bg-accent mr-5"
           >
             <i class="fab fa-github"></i>
           </a>
           <a
-            :href="projects.website"
+            :href="project.website"
             target="_blank"
             class="transition duration-300 bg-light py-1 px-2 rounded text-secondary hover:bg-text1 active:bg-accent"
           >
@@ -133,43 +129,64 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "Home",
   data: () => ({
-    skill: null,
-    skills: ["UI UX Designer", "Graphic Designer", "Web Developer"],
-    current: 0,
-    skillAnim: "animate__animated animate__fadeInDown",
-    projects: {
-      image: null,
-      name: "esele web app",
-      github: "https://github.com/whytepeter/sele",
-      website: "https://esele.netlify.app/"
+    work: {
+      skill: null,
+      skills: ["UI UX Designer", "Graphic Designer", "Web Developer"],
+      current: 0,
+      skillAnim: "animate__animated animate__fadeInDown"
+    },
+    carousel: {
+      current: 0,
+      project: {}
     }
   }),
 
   methods: {
     ...mapMutations(["goto"]),
     setSkills() {
-      let last = this.skills.length - 1;
-      this.skill = this.skills[this.current];
+      let last = this.work.skills.length - 1;
+      this.work.skill = this.work.skills[this.work.current];
 
-      let isLast = this.skills.indexOf(this.skill) == last;
+      let isLast = this.work.skills.indexOf(this.work.skill) == last;
       if (isLast) {
-        this.current = 0;
+        this.work.current = 0;
       } else {
-        ++this.current;
+        ++this.work.current;
       }
     },
     setAnim() {
-      if (this.skillAnim == "animate__animated animate__fadeInDown") {
-        this.skillAnim = "animate__animated animate__fadeOutUp";
-      } else if (this.skillAnim == "animate__animated animate__fadeOutUp") {
-        this.skillAnim = "animate__animated animate__fadeInDown";
+      if (this.work.skillAnim == "animate__animated animate__fadeInDown") {
+        this.work.skillAnim = "animate__animated animate__fadeOutUp";
+      } else if (
+        this.work.skillAnim == "animate__animated animate__fadeOutUp"
+      ) {
+        this.work.skillAnim = "animate__animated animate__fadeInDown";
       }
+    },
+
+    setProject() {
+      let last = this.projects.length - 1;
+      this.carousel.project = this.projects[this.carousel.current];
+      let isLast = this.projects.indexOf(this.carousel.project) == last;
+
+      if (isLast) {
+        this.carousel.current = 0;
+      } else {
+        ++this.carousel.current;
+      }
+    },
+
+    getImg(pic) {
+      return require(`../assets/Portfolio/${pic}`);
     }
   },
   computed: {
-    ...mapGetters({ isActive: "getActive" }),
+    ...mapGetters({ isActive: "getActive", projects: "getProjects" }),
     iAm() {
-      return this.skill;
+      return this.work.skill;
+    },
+    project() {
+      return this.carousel.project;
     }
   },
 
@@ -181,6 +198,10 @@ export default {
     setInterval(() => {
       this.setAnim();
     }, 4000);
+
+    setInterval(() => {
+      this.setProject();
+    }, 7000);
   }
 };
 </script>

@@ -9,7 +9,9 @@
         leave-active-class="animate__animated animate__fadeOut"
         mode="out-in"
       >
-        <router-view />
+        <keep-alive>
+          <router-view />
+        </keep-alive>
       </transition>
     </div>
   </div>
