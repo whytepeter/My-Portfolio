@@ -110,10 +110,10 @@
           </a>
         </div>
         <router-link
-          to="/portfolio"
+          to="/projects"
           class="portfol transition duration-300 text-accent text-base hover:text-text2"
         >
-          <a @click="goto('portfolio')" class="flex items-centers">
+          <a @click="goto('projects')" class="flex items-centers">
             <p>See more</p>
             <span class="text-xl ml-2">
               <i class="fas fa-long-arrow-alt-right"></i>
