@@ -22,7 +22,7 @@
       <div
         v-for="project in projects"
         :key="project.id"
-        class="bg-white w-full col-span-1 shadow-lg rounded-md overflow-hidden"
+        class="bg-white w-full flex flex-col justify-between col-span-1 shadow-lg rounded-md overflow-hidden"
       >
         <div class="w-full">
           <img

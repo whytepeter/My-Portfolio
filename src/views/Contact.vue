@@ -184,17 +184,27 @@ export default {
       this.isMessage = false;
     },
 
-    setAlert() {
-      this.alert = "Message send successful";
+    setAlert(msg) {
+      this.alert = msg;
       this.isAlert = true;
 
       setTimeout(() => {
         this.isAlert = false;
-      }, 5000);
+      }, 10000);
     },
     onSubmit() {
       if (this.validate("email") && this.validate("message")) {
-        this.setAlert();
+        window.Email.send({
+          Host: "smtp.gmail.com",
+          Username: "whytewebonline@gmail.com",
+          Password: "whyteweb738375",
+          To: "whytewebonline@gmail.com",
+          From: this.email,
+          Subject: "From WhyteWeb",
+          Body: this.message
+        }).then(message => {
+          this.setAlert(message);
+        });
 
         //clear fields
         this.resetForm();
