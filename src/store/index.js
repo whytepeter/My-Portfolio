@@ -11,7 +11,7 @@ export default new Vuex.Store({
         id: 1,
         name: "Esele ",
         description: " A web app for POS business",
-        website: "esele.netlify.app",
+        website: "https://esele.netlify.app/",
         github: "https://github.com/whytepeter/sele",
 
         img: "esele.png",

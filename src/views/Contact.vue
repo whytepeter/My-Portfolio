@@ -81,7 +81,8 @@
     <div class="right w-full -mt-10 md:mt-0 mx-auto px-2 py-6 col-span-1 row-span-1">
       <form
         @submit.prevent="onSubmit"
-        method="POST"
+        name="contact"
+        method="post"
         netlify
         class="animate__animated animate__fadeInRight bg-secondary relative w-full rounded-lg px-6 py-6 flex flex-col justify-around"
       >
