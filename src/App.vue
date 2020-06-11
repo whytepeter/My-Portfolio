@@ -2,7 +2,7 @@
   <div id="app" class="background relative w-screen h-screen bg-fixed">
     <div class="background index fixed top-0 left-0 bottom-0 right-0"></div>
     <div class="container height mx-auto px-0 md:px-4 py-6 font-lato">
-      <app-navbar class="z-30" />
+      <app-navbar class="z-40" />
       <transition
         :duration="400"
         enter-active-class="animate__animated animate__fadeIn"

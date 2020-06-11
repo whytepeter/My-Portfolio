@@ -1,7 +1,18 @@
 <template>
   <div
-    class="text-text2 h-auto grid col-gap-10 grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 mx-auto lg:w-10/12 py-6"
+    class="text-text2 relative h-auto grid col-gap-10 grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 mx-auto lg:w-10/12 py-6"
   >
+    <div
+      class="Doddle animate__animated animate__pulse animate__slow animate__infinite absolute md:hidden top-0 right-0 mr-6 z-30"
+    >
+      <router-link to="/projects">
+        <div
+          class="transition duration-300 cursor-pointer bg-white text-3xl px-3 py-1 text-text2 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl hover:text-text1"
+        >
+          <i class="fas fa-briefcase"></i>
+        </div>
+      </router-link>
+    </div>
     <transition
       enter-active-class="animate__animated animate__fadeInDown"
       leave-active-class="animate__animated animate__fadeOutUp"
@@ -83,7 +94,8 @@
         @submit.prevent="onSubmit"
         name="contact"
         method="post"
-        netlify
+        action="mailto:whytewebonline@gmail.com"
+        enctype="text/plain"
         class="animate__animated animate__fadeInRight bg-secondary relative w-full rounded-lg px-6 py-6 flex flex-col justify-around"
       >
         <div class="mb-4 text-xl text-text1 font-bold flex items-center">

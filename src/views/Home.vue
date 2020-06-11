@@ -1,5 +1,20 @@
 <template>
   <div class="h-screen relative grid grid-cols-3 grid-rows-2 gap-2 text-text2 overflow-hidden">
+    <div
+      class="Doddle animate__animated animate__pulse animate__slow animate__infinite md:hidden absolute top-0 right-0 mr-6 z-30"
+    >
+      <router-link to="/about">
+        <div
+          class="transition duration-300 w-16 h-16 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl"
+        >
+          <img
+            src="../assets/about-head.png"
+            alt="whyte"
+            class="w-full h-full object-cover object-top"
+          />
+        </div>
+      </router-link>
+    </div>
     <div class="INFO px-6 pt-16 pb-6 items-center col-span-3 lg:col-span-1">
       <div class="w-full flex flex-col items-left md:items-center lg:items-start">
         <div
@@ -48,7 +63,7 @@
       </div>
     </div>
     <div class="Social absolute z-20 top-0 right-0 py-4 flex">
-      <div class="Social h-auto flex flex-col justify-between items-end px-1 md:py-4 my-3 text-xl">
+      <div class="Social h-auto flex flex-col justify-between items-end px-1 md:py-4 mt-10 text-xl">
         <a
           href="https://github.com/whytepeter"
           target="_blank"

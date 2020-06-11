@@ -1,7 +1,18 @@
 <template>
   <div
-    class="text-text2 h-auto grid gap-10 grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 mx-auto lg:w-10/12 py-6"
+    class="text-text2 relative h-auto grid gap-10 grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 mx-auto lg:w-10/12 py-6"
   >
+    <div
+      class="Doddle animate__animated animate__pulse animate__slow animate__infinite absolute md:hidden top-0 right-0 mr-6 z-30"
+    >
+      <router-link to="/contact">
+        <div
+          class="transition duration-300 cursor-pointer bg-white text-3xl px-3 py-1 text-text2 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl hover:text-text1"
+        >
+          <i class="fas fa-paper-plane"></i>
+        </div>
+      </router-link>
+    </div>
     <div
       class="PROFILE animate__animated animate__fadeInLeft mx-auto px-2 col-span-1 row-span-1 flex justify-between rounded-lg shadow-lg"
     >
