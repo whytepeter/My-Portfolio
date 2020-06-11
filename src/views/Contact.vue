@@ -81,6 +81,7 @@
     <div class="right w-full -mt-10 md:mt-0 mx-auto px-2 py-6 col-span-1 row-span-1">
       <form
         @submit.prevent="onSubmit"
+        netlify
         class="animate__animated animate__fadeInRight bg-secondary relative w-full rounded-lg px-6 py-6 flex flex-col justify-around"
       >
         <div class="mb-4 text-xl text-text1 font-bold flex items-center">
@@ -105,12 +106,12 @@
             class="transition duration-300 transform font-medium"
           >Email Address</label>
           <input
+            type="email"
+            name="email"
             @input="validate('email')"
             @focusin="isEmail = true"
             @focusout="email == '' ? isEmail = false : isEmail = true"
             v-model="email"
-            id="email"
-            type="text"
             class="bg-transparent focus:outline-none pb-2 text-text1 font-semibold"
           />
         </div>
@@ -120,12 +121,14 @@
           class="Message-Field transition duration-300 mb-6 flex flex-col border-b-2"
         >
           <label
-            for="email"
+            for="message"
             :class="[isMessage ? 'translate-y-0 text-accent text-sm' : 'translate-y-6 ']"
             class="transition duration-300 transform font-medium"
           >Message</label>
 
           <textarea
+            type="text"
+            name="message"
             @input="validate('message')"
             @focusin="isMessage = true"
             @focusout="message == '' ? isMessage = false : isMessage = true"
@@ -194,17 +197,7 @@ export default {
     },
     onSubmit() {
       if (this.validate("email") && this.validate("message")) {
-        window.Email.send({
-          Host: "smtp.gmail.com",
-          Username: "whytewebonline@gmail.com",
-          Password: "whyteweb738375",
-          To: "whytewebonline@gmail.com",
-          From: this.email,
-          Subject: "From WhyteWeb",
-          Body: this.message
-        }).then(message => {
-          this.setAlert(message);
-        });
+        this.setAlert("Message sent successful");
 
         //clear fields
         this.resetForm();
