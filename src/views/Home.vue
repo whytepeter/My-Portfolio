@@ -4,7 +4,7 @@
       class="Doddle animate__animated animate__pulse animate__slow animate__infinite md:hidden absolute top-0 right-0 mr-6 z-30"
     >
       <router-link to="/about">
-        <div
+        <a @click="goto('about')"
           class="transition duration-300 w-16 h-16 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl"
         >
           <img

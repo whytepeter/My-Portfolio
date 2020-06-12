@@ -6,7 +6,7 @@
       class="Doddle animate__animated animate__pulse animate__slow animate__infinite absolute md:hidden top-0 right-0 mr-6 z-30"
     >
       <router-link to="/contact">
-        <div
+        <div @click="goto('contact')"
           class="transition duration-300 cursor-pointer bg-white text-3xl px-3 py-1 text-text2 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl hover:text-text1"
         >
           <i class="fas fa-paper-plane"></i>
