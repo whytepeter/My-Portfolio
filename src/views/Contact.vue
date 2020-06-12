@@ -6,7 +6,8 @@
       class="Doddle animate__animated animate__pulse animate__slow animate__infinite absolute md:hidden top-0 right-0 mr-6 z-30"
     >
       <router-link to="/projects">
-        <div @click="goto('projects')"
+        <div
+          @click="goto('projects')"
           class="transition duration-300 cursor-pointer bg-white text-3xl px-3 py-1 text-text2 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl hover:text-text1"
         >
           <i class="fas fa-briefcase"></i>
@@ -112,7 +113,7 @@
         </div>
         <div
           :class="[ isEmail ? 'border-accent' : 'border-text2']"
-          class="Email-Field transition duration-300 mb-4 flex flex-col border-b-2"
+          class="Email-Field transition duration-300 pointer-events-none mb-4 flex flex-col border-b-2"
         >
           <label
             for="email"
@@ -137,7 +138,7 @@
           <label
             for="message"
             :class="[isMessage ? 'translate-y-0 text-accent text-sm' : 'translate-y-6 ']"
-            class="transition duration-300 transform font-medium"
+            class="transition duration-300 transform pointer-events-none font-medium"
           >Message</label>
 
           <textarea
@@ -161,7 +162,7 @@
   </div>
 </template>
 <script>
-import {mapMutations} from "vuex"
+import { mapMutations } from "vuex";
 export default {
   data: () => ({
     error: null,
@@ -175,7 +176,7 @@ export default {
     message: ""
   }),
   methods: {
-     ...mapMutations(["goto"]),
+    ...mapMutations(["goto"]),
     validate(field) {
       if (field == "email") {
         if (this.email.trim() == "") {
