@@ -6,13 +6,13 @@
       <router-link to="/about">
         <a @click="goto('about')"
           class="transition duration-300 w-16 h-16 overflow-hidden rounded-full border-4 border-light shadow-lg focus:shadow-2xl"
-        >
+        />
           <img
             src="../assets/about-head.png"
             alt="whyte"
             class="w-full h-full object-cover object-top"
           />
-        </div>
+        
       </router-link>
     </div>
     <div class="INFO px-6 pt-16 pb-6 items-center col-span-3 lg:col-span-1">

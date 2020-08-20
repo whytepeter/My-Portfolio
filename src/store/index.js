@@ -9,6 +9,15 @@ export default new Vuex.Store({
     projects: [
       {
         id: 1,
+        name: "Unicryptotrade ",
+        description: " A web app for POS business",
+        website: "https://unicrypto/",
+        github: "https://github.com/whytepeter/crypto",
+
+        img: "unicryptotrade.png",
+      },
+      {
+        id: 2,
         name: "Esele ",
         description: " A web app for POS business",
         website: "https://esele.netlify.app/",
@@ -17,7 +26,7 @@ export default new Vuex.Store({
         img: "esele.png",
       },
       {
-        id: 2,
+        id: 3,
         name: "Calculator ",
         description: " A web calculator app",
         website: "https://whytepeter.github.io/my-calculator/",
