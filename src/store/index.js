@@ -11,7 +11,7 @@ export default new Vuex.Store({
         id: 1,
         name: "Unicryptotrade ",
         description: " A web app for POS business",
-        website: "https://unicrypto/",
+        website: "https://unicryptotrade.com/",
         github: "https://github.com/whytepeter/crypto",
 
         img: "unicryptotrade.png",
